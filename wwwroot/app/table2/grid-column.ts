@@ -21,7 +21,7 @@ export class GridColumn {
     bind(bindingContext: any) {
         this.bindingContext = bindingContext;
         var parentElement = document.createElement("div");
-        var elements : HTMLElement[] = [].slice.call(this.element.children);
+        var elements : HTMLElement[] = [].slice.call((<any>this.element).children);
         if (elements.length == 0) return;
         elements.forEach(e => parentElement.appendChild(e));
         this.innerhtml = parentElement.innerHTML;

@@ -1,0 +1,13 @@
+<template>
+    <require from="./grid-row"></require>
+    <table class="table">
+        <tr class="row">
+            <td class="cell" repeat.for="column of columns">
+                ${column.title}
+            </td>
+        </tr>
+        <grid-row class="row" repeat.for="row of datasource" item.bind="row" columns.bind="columns">
+        </grid-row>
+    </table>
+    <content></content>
+</template>

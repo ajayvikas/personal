@@ -1,0 +1,6 @@
+<template>
+    <require from="./table-grid"></require>
+    <input type='button' click.trigger='onClickAdd()' value="Add" />
+    <table-grid dataSource.bind="customers" columns.bind="columns">
+    </table-grid>
+</template>
