@@ -1,0 +1,15 @@
+<template>
+    <require from="./label-input"></require>
+    <require from="./grid"></require>
+    <div repeat.for="pair of data">        
+        <label-input label.bind="pair.label" value.bind="pair.value"></label-input>
+        <input type="text" value.bind="pair.label" />
+        <input type="text" value.bind="pair.value" />
+    </div>
+    <div>
+        <grid data.bind="data" columns.bind="columns"></grid>
+    </div>
+    <div>
+        <button type="button" click.trigger="onClick()">Click me</button>
+    </div>
+</template>

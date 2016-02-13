@@ -1,0 +1,23 @@
+<template>
+    <require from="./label-input"></require>
+    <table>
+        <tr>
+            <td>
+                <label-input label.bind="label" value.bind="value"></label-input>
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td repeat.for="column of columns">
+                ${column}
+            </td>
+        </tr>
+        <tr repeat.for="row of data">
+            <td repeat.for="column of columns">
+                ${row[column]}
+            </td>
+        </tr>
+    </table>    
+</template>

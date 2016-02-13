@@ -1,0 +1,8 @@
+<template>
+    <require from="./tab"></require>
+    <div>${items.length}</div>
+    <tab heading.bind="'Ajay'"></tab>
+    <tab heading.bind="'Vikas'"></tab>
+    <tab repeat.for="tt of alltabs" heading.bind="tt">
+    </tab>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <require from="./table-grid"></require>
+    <require from="./grid-column"></require>
+    <input type='button' click.trigger='onClickAdd()' value="Add" />
+    <table-grid dataSource.bind="customers">
+        <grid-column title.bind="'Id'" field.bind="'Id'"></grid-column>
+        <grid-column title.bind="'First Name'" field.bind="'FirstName'"></grid-column>
+        <grid-column title.bind="'First Name'" field.bind="'FirstName'">
+            <input type="text" value.bind="item.FirstName" />
+        </grid-column>
+        <grid-column title.bind="'Last Name'" field.bind="'LastName'"></grid-column>
+        <grid-column title.bind="'First Name'" field.bind="'FirstName'">
+            <input type="text" value.bind="item.LastName" />
+        </grid-column>
+        <grid-column title.bind="'Gender'" field.bind="'Gender'"></grid-column>
+        <grid-column title.bind="'Email'" field.bind="'Email'"></grid-column>
+        <grid-column title.bind="'IP Address'" field.bind="'IPAddress'"></grid-column>
+        <grid-column title.bind="'Refresh'">
+            <a target="_blank" href="javascript:void(0)" click.delegate="events.onImageClick(item, $event)">
+                <img src="/loading_2x.gif" />
+            </a>
+        </grid-column>
+    </table-grid>
+</template>

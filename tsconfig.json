@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "noEmit": true,
+        "noEmitOnError": true,
+        "noImplicitAny": false,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es5",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node"
+    },
+    "filesGlob": [
+        "./wwwroot/src/**/*.ts",
+        "./test/**/*.ts",
+        "./typings/browser.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

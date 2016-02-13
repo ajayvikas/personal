@@ -1,0 +1,22 @@
+<template>
+    <require from="./grid-column"></require>
+    <require from="./cell"></require>
+    <table>
+        <tr>
+            <td repeat.for="column of columns">
+                ${column.title}
+            </td>
+        </tr>
+        <tr repeat.for="row of datasource">
+            <td repeat.for="column of columns">
+                <span if.bind="column.viewFactory == null">
+                    ${row[column.field]}
+                </span>
+                <span if.bind="column.viewFactory != null">
+                    <cell view-spy item.bind="row" column.bind="column"></column-template>
+                </span>
+            </td>
+        </tr>
+    </table>
+    <content></content>
+</template>
