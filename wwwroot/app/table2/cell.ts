@@ -14,7 +14,6 @@ export class Cell {
     @bindable column: GridColumn;
     events: any;
     attached() {
-        console.log("from attached");
         this.events = this.column.bindingContext;
         var view = this.column.viewFactory.create(this.container);
         view.bind(this);
