@@ -1,10 +1,11 @@
-import {customElement, bindable, inject, processAttributes, processContent,
+import {customElement, bindable, inject, processAttributes, processContent, containerless,
     ViewCompiler, ViewResources, BehaviorInstruction, Container, TargetInstruction,
     BindingEngine, children} from 'aurelia-framework';
 import {GridColumn} from "./grid-column";
 //@processContent(processGridContents)
 @customElement("table-grid")
 @inject(Element, ViewCompiler, ViewResources, Container, TargetInstruction, BindingEngine)
+//@containerless
 export class TableGrid {
     @bindable datasource: any[];
     @children("grid-column") columns;

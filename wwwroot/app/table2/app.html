@@ -1,9 +1,9 @@
 <template>
     <require from="./table-grid"></require>
     <require from="./grid-column"></require>
-    <input type='button' click.trigger='onClickAdd()' value="Add" />
+    <input type='button' style="color:blue" style.bind="style" click.trigger='onClickAdd()' value="Add" />
     <table-grid dataSource.bind="customers">
-        <grid-column title.bind="'Id'" field.bind="'Id'"></grid-column>
+        <grid-column title.bind="'Id'" field.bind="'Id'" cellstyle.bind="'background-color:yellow'"></grid-column>
         <grid-column title.bind="'First Name'" field.bind="'FirstName'"></grid-column>
         <grid-column title.bind="'First Name'" field.bind="'FirstName'">
             <input type="text" value.bind="item.FirstName" />

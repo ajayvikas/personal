@@ -1,6 +1,6 @@
 <template>
     <require from="./grid-column"></require>
-    <require from="./cell"></require>
+    <require from="./cell-transclude"></require>
     <table>
         <tr>
             <td repeat.for="column of columns">
@@ -8,13 +8,9 @@
             </td>
         </tr>
         <tr repeat.for="row of datasource">
-            <td repeat.for="column of columns">
-                <span if.bind="column.viewFactory == null">
-                    ${row[column.field]}
-                </span>
-                <span if.bind="column.viewFactory != null">
-                    <cell view-spy item.bind="row" column.bind="column"></column-template>
-                </span>
+            <td repeat.for="column of columns" style.bind="column.cellstyle">
+                <cell-transclude if.bind="column.viewFactory != null" item.bind="row" column.bind="column">
+                </cell-transclude>
             </td>
         </tr>
     </table>

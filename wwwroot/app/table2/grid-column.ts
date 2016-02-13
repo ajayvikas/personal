@@ -9,7 +9,7 @@ import {noView, bindable, inject, customElement, containerless, ViewCompiler, Vi
 export class GridColumn {
     @bindable public title: string;
     @bindable public field: string;
-    public innerhtml: string;
+    @bindable public cellstyle: string;
     public viewFactory : ViewFactory;
     public bindingContext: any;
     constructor(private element: Element,
@@ -22,10 +22,15 @@ export class GridColumn {
         this.bindingContext = bindingContext;
         var parentElement = document.createElement("div");
         var elements : HTMLElement[] = [].slice.call((<any>this.element).children);
-        if (elements.length == 0) return;
-        elements.forEach(e => parentElement.appendChild(e));
-        this.innerhtml = parentElement.innerHTML;
-        this.viewFactory = this.viewComplier.compile(`<template>${this.innerhtml}</template>`, this.viewResources);
+        if (elements.length == 0) {
+            var template = "<template>${item." + this.field + "}</template>";
+            this.viewFactory = this.viewComplier.compile(template, this.viewResources);
+        }
+        else {
+            elements.forEach(e => parentElement.appendChild(e));
+            var innerhtml = parentElement.innerHTML;
+            this.viewFactory = this.viewComplier.compile(`<template>${innerhtml}</template>`, this.viewResources);
+        }
     }
 }
 

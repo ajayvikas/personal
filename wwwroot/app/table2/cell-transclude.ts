@@ -1,10 +1,10 @@
 import {customElement, children, bindable, ViewCompiler, ViewFactory,
     ViewResources, Container, ViewSlot, noView, containerless} from 'aurelia-framework';
 import {GridColumn} from "./grid-column";
-@customElement("cell")
+@customElement("cell-transclude")
 @containerless()
 @noView()
-export class Cell {
+export class CellTransclude {
     constructor(private viewComplier: ViewCompiler, 
                 private viewResources: ViewResources, 
                 private container: Container, 

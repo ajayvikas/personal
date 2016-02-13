@@ -3,7 +3,8 @@ import {customElement} from 'aurelia-framework';
 export class App {
     public customers: any[] = [];
     private index: number = 0;
-    private pageSize: number = 3;
+    private pageSize: number = 300;
+    public style: string = "background-color:yellow";
     onClickAdd() {
         if (this.index == 10) return;
         var newCustomers = this.getCustomers(++this.index);

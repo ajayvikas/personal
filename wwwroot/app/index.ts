@@ -8,7 +8,7 @@ export function configure(aurelia: Aurelia): void {
         .plugin("aurelia-computed", {enableLogging: true })
         .plugin("aurelia-dialog");
     
-    aurelia.start().then(() => aurelia.setRoot("app/table-bug/app"));
+    aurelia.start().then(() => aurelia.setRoot("app/table2/app"));
     //aurelia.start().then(() => aurelia.setRoot("app/test/welcome"));
     //aurelia.start().then(() => aurelia.setRoot("app/table/table-harness"));
 }
