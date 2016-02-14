@@ -1,10 +1,14 @@
 import {customElement} from 'aurelia-framework';
+import {Validation} from 'aurelia-validation';
 @customElement("app")
 export class App {
     public customers: any[] = [];
     private index: number = 0;
     private pageSize: number = 300;
     public style: string = "background-color:yellow";
+    constructor(private validation: Validation) {
+        this.validation = validation.on(this, null).ensure("style").isNotEmpty();
+    }
     onClickAdd() {
         if (this.index == 10) return;
         var newCustomers = this.getCustomers(++this.index);

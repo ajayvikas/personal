@@ -1,6 +1,9 @@
 <template>
     <require from="./table-grid"></require>
     <require from="./grid-column"></require>
+    <form validate.bind="validation">
+        <input type="text" value.bind="style" class="form-group"/>
+    </form>
     <input type='button' style="color:blue" style.bind="style" click.trigger='onClickAdd()' value="Add" />
     <table-grid dataSource.bind="customers">
         <grid-column title.bind="'Id'" field.bind="'Id'" cellstyle.bind="'background-color:yellow'"></grid-column>

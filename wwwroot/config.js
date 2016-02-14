@@ -51,6 +51,7 @@ System.config({
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.1.1",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.1.1",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.1.1",
+    "aurelia-validation": "npm:aurelia-validation@0.6.2",
     "core-js": "npm:core-js@2.1.0",
     "css": "github:systemjs/plugin-css@0.1.20",
     "fetch": "github:github/fetch@0.10.1",
@@ -214,6 +215,13 @@ System.config({
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.0",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0-beta.1.1.1",
       "core-js": "npm:core-js@2.1.0"
+    },
+    "npm:aurelia-validation@0.6.2": {
+      "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
+      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.1.1.3",
+      "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.1.1",
+      "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.4",
+      "aurelia-templating": "npm:aurelia-templating@1.0.0-beta.1.1.1"
     },
     "npm:core-js@2.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
