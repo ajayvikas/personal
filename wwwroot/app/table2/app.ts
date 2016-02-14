@@ -4,7 +4,7 @@ import {Validation} from 'aurelia-validation';
 export class App {
     public customers: any[] = [];
     private index: number = 0;
-    private pageSize: number = 300;
+    private pageSize: number = 30;
     public style: string = "background-color:yellow";
     constructor(private validation: Validation) {
         this.validation = validation.on(this, null).ensure("style").isNotEmpty();

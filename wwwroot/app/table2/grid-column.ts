@@ -23,13 +23,14 @@ export class GridColumn {
         var parentElement = document.createElement("div");
         var elements : HTMLElement[] = [].slice.call((<any>this.element).children);
         if (elements.length == 0) {
-            var template = "<template>${item." + this.field + "}</template>";
+            var template = "<template><td style.bind='column.cellstyle'>${item." + this.field + "}</td></template>";
             this.viewFactory = this.viewComplier.compile(template, this.viewResources);
         }
         else {
             elements.forEach(e => parentElement.appendChild(e));
             var innerhtml = parentElement.innerHTML;
-            this.viewFactory = this.viewComplier.compile(`<template>${innerhtml}</template>`, this.viewResources);
+            var template = `<template><td style.bind='column.cellstyle'>${innerhtml}</td></template>`;
+            this.viewFactory = this.viewComplier.compile(template, this.viewResources);
         }
     }
 }

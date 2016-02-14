@@ -1,17 +1,12 @@
 <template>
-    <require from="./grid-column"></require>
-    <require from="./cell-transclude"></require>
+    <require from="./grid-row"></require>
     <table>
         <tr>
             <td repeat.for="column of columns">
                 ${column.title}
             </td>
         </tr>
-        <tr repeat.for="row of datasource">
-            <td repeat.for="column of columns" style.bind="column.cellstyle">
-                <cell-transclude if.bind="column.viewFactory != null" item.bind="row" column.bind="column">
-                </cell-transclude>
-            </td>
+        <tr as-element="row" repeat.for="item of datasource" item.bind="item" columns.bind="columns">
         </tr>
     </table>
     <content></content>
